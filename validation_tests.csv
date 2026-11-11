@@ -1,0 +1,36 @@
+Test,Passed
+parse_time_series: valid / invalid / missing statuses,True
+"seconds_to_hms formats 0, 3661 and keeps NaN",True
+fmt_hm: 5 h 07 min and N/A,True
+unroll_times: overnight journey = 3 h 10 min,True
+unroll_times: 10:00 -> 09:30 is flagged as a regression,True
+classify_routes: manual thresholds + Unclassified for NaN,True
+classify_routes: rejects thresholds that are not increasing,True
+"paginate: 1000 rows / 25 per page = 40 pages, last page has rows 975-999",True
+paginate: no 300-row cap – 4 pages of 300 cover all 1000 rows exactly once,True
+Original uploaded data is unchanged,True
+Stop_Pos runs 1..N for every train,True
+Sum of recorded stations per train = number of rows,True
+"Intermediate stops = max(total - 2, 0)",True
+Distinct trains per station <= occurrences,True
+Total station occurrences = number of rows,True
+"Every 'Reliable' duration is positive, plausible and regression-free",True
+No train with a time regression is classed 'Reliable',True
+Independent re-calculation matches 200 reliable durations,True
+Route categories respect the thresholds,True
+Repeated station visits are preserved in the enquiry table,True
+Cleaned dataset keeps every working row,True
+Enquiry (codes): a result is found for a real route,True
+Enquiry: destination always comes AFTER the source,True
+Enquiry: reverse direction never returns a wrong-way row,True
+Enquiry: reported totals equal the table size,True
+Enquiry: lower-case code gives the same result,True
+Enquiry: unknown station is rejected,True
+Enquiry: empty input is rejected,True
+Enquiry: same source and destination is rejected,True
+Enquiry: duration of the first result matches an independent calculation,True
+Enquiry: detail view lists EVERY station between source and destination,True
+Enquiry: export contains ALL results and the full intermediate-station list,True
+Enquiry: stretch warnings are shown wherever the stretch contains an SN gap,True
+Enquiry: no distance is shown across a decreasing step,True
+Enquiry: overnight arrivals are labelled '+N day(s)',True
